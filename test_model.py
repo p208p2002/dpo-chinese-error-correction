@@ -7,7 +7,8 @@ tokenizer = AutoTokenizer.from_pretrained(sys.argv[-1])
 test_texts = [
     "你要不要和我依起去台北",
     "清晨六點終太陽會升起",
-    "過馬路時你應該要注意虹綠燈"
+    "過馬路時你應該要注意虹綠燈",
+    "他正在學學彈吉他"
 ]
 for text in test_texts:
     inputs = tokenizer(
