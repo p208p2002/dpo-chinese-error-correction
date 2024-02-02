@@ -33,11 +33,11 @@ model = AutoModelForCausalLM.from_pretrained(sys.argv[-1])
 tokenizer = AutoTokenizer.from_pretrained(sys.argv[-1])
 
 training_args = TrainingArguments(
-    per_device_train_batch_size=50,
+    per_device_train_batch_size=30,
     num_train_epochs=3,
     logging_steps=1,
     output_dir="dpo_trainer",
-    save_steps=2000
+    save_steps=500
 )
 
 dpo_trainer = DPOTrainer(
