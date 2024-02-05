@@ -1,5 +1,5 @@
-# DPO Chinese Error Correction Model
-使用DPO訓練之中文糾錯模型。
+# DPO Chinese Error Correction
+使用 Direct Preference Optimization (DPO) 訓練之中文糾錯模型。
 
 ### Usage
 ```python
