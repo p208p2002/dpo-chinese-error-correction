@@ -1,7 +1,6 @@
 from transformers import AutoModelForCausalLM,TrainingArguments,AutoTokenizer
 from datasets import load_dataset
 from trl import SFTTrainer
-from transformers import AddedToken
 
 dataset = load_dataset("p208p2002/zhtw-sentence-error-correction", "alpha")
 MODEL_NAME_OR_ID = "ckip-joint/bloom-1b1-zh"

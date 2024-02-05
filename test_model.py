@@ -37,7 +37,7 @@ for text in test_texts:
     input_text = input_text.strip()
     output_text = output_text.strip()
 
-    print(input_text)
-    print(output_text)
+    print("input :",input_text)
+    print("output:",output_text)
     print('-'*30)
 
