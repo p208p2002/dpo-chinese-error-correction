@@ -4,8 +4,9 @@ from trl import SFTTrainer
 from transformers import AddedToken
 
 dataset = load_dataset("p208p2002/zhtw-sentence-error-correction", "alpha")
-model = AutoModelForCausalLM.from_pretrained("p208p2002/llama-traditional-chinese-120M")
-tokenizer = AutoTokenizer.from_pretrained("p208p2002/llama-traditional-chinese-120M")
+MODEL_NAME_OR_ID = "ckip-joint/bloom-1b1-zh"
+model = AutoModelForCausalLM.from_pretrained(MODEL_NAME_OR_ID)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME_OR_ID)
 tokenizer.padding_side = "right"
 tokenizer.pad_token = "<pad>"
 
@@ -16,11 +17,12 @@ def formatting_func(example):
     return out
 
 training_args = TrainingArguments(
-    per_device_train_batch_size=30,
+    per_device_train_batch_size=5,
+    gradient_accumulation_steps=10,
     num_train_epochs=3,
     logging_steps=100,
     output_dir="sft_trainer",
-    save_steps=500,
+    save_steps=500
 )
 
 trainer = SFTTrainer(
