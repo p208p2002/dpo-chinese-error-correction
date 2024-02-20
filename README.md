@@ -1,5 +1,5 @@
 # DPO Chinese Error Correction
-使用 Direct Preference Optimization (DPO) 訓練之中文糾錯模型。
+使用 Direct Preference Optimization (DPO) 訓練中文糾錯模型。
 
 ### Usage
 ```python
@@ -7,8 +7,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, LlamaForCausalLM,A
 import sys
 
 mode_id = "p208p2002/bloom-1b1-zh-error-correction-dpo"
-model: LlamaForCausalLM = AutoModelForCausalLM.from_pretrained("p208p2002/bloom-1b1-zh-error-correction-dpo")
-tokenizer = AutoTokenizer.from_pretrained("p208p2002/bloom-1b1-zh-error-correction-dpo")
+model: LlamaForCausalLM = AutoModelForCausalLM.from_pretrained(mode_id)
+tokenizer = AutoTokenizer.from_pretrained(mode_id)
 
 test_texts = [
     "為了潔約能源請隨守關閉沒有使用的電器",
